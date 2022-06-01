@@ -1,8 +1,46 @@
+<h1>own example with sbb-select</h1>
+<sbb-select
+  formControlName="prjMgrCtrlTech"
+  multiple
+  placeholder="Essen - Weiterer Placeholdertext"
+>
+  <sbb-optgroup
+    *ngFor="let entriesOfGroup of entriesOfGroups"
+    [label]="entriesOfGroup.group"
+  >
+    <sbb-option
+      *ngFor="let entry of entriesOfGroup.entries"
+      [value]="entry.display"
+      sbbTooltip="{{entry.tooltip}}" aria-selected="isPreselected(entry.display)"
+    >
+      {{ entry.display }}
+    </sbb-option>
+  </sbb-optgroup>
+</sbb-select>
+
+<h1>Plan HTML example </h1>
+  <select name="cars" id="cars" multiple>
+  <option selected value="volvo">Volvo</option>
+  <option selected value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
+
+
+<h1>sbb example</h1>
+
 <form [formGroup]="form">
   <sbb-form-field>
     <sbb-label>International food</sbb-label>
-    <sbb-select formControlName="value" multiple placeholder="International food">
-      <sbb-optgroup *ngFor="let foodNation of foodFromTheWorld" [label]="foodNation.nation">
+    <sbb-select
+      formControlName="value"
+      multiple
+      placeholder="International food"
+    >
+      <sbb-optgroup
+        *ngFor="let foodNation of foodFromTheWorld"
+        [label]="foodNation.nation"
+      >
         <sbb-option *ngFor="let food of foodNation.food" [value]="food.value"
           >{{ food.viewValue }}</sbb-option
         >
