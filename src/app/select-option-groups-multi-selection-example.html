@@ -1,4 +1,4 @@
-<h1>own example with sbb-select</h1>
+<h1>own example with sbb-select --> preselect NOT working!!!</h1>
 <sbb-select
   formControlName="prjMgrCtrlTech"
   multiple
@@ -11,7 +11,7 @@
     <sbb-option
       *ngFor="let entry of entriesOfGroup.entries"
       [value]="entry.display"
-      sbbTooltip="{{entry.tooltip}}" aria-selected="isPreselected(entry.display)"
+      sbbTooltip="{{entry.tooltip}}" selected="isPreselected(entry.display)"
     >
       {{ entry.display }}
     </sbb-option>
