@@ -1,4 +1,44 @@
-<h1>own example with sbb-select --> preselect NOT working!!!</h1>
+<h1>own static example with sbb-select --> preselect NOT working!!!</h1>
+<sbb-select
+  multiple
+  placeholder="Placeholder"
+>
+  <sbb-optgroup
+    label="Farben">
+    <sbb-option
+      value="Blau"
+      sbbTooltip="Blau Tooltip">
+      Blau
+    </sbb-option>
+    <sbb-option
+      value="Gelb"
+      sbbTooltip="Gelb Tooltip">
+      Gelb
+    </sbb-option>
+    <sbb-option
+      value="Pink"
+      sbbTooltip="Pink Tooltip" selected>
+      Pink
+    </sbb-option>
+  </sbb-optgroup>
+  <sbb-optgroup
+    label="Bäume">
+    <sbb-option
+      value="Tanne"
+      sbbTooltip="Tanne Tooltip" sbb-select>
+      Tanne
+    </sbb-option>
+    <sbb-option
+      value="Birke"
+      sbbTooltip="Birke Tooltip" sbb-selected>
+      Birke
+    </sbb-option>
+  </sbb-optgroup>
+</sbb-select>
+
+
+
+<h1>own dynamic example with sbb-select --> preselect NOT working!!!</h1>
 <sbb-select
   formControlName="prjMgrCtrlTech"
   multiple
