@@ -10,11 +10,10 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
   templateUrl: 'select-option-groups-multi-selection-example.html',
 })
 export class SelectOptionGroupsMultiSelectionExample {
-  
   data = new FormControl();
 
   newForm = new FormGroup({
-    data: this.data
+    data: this.data,
   });
 
   form: FormGroup;
@@ -53,10 +52,9 @@ export class SelectOptionGroupsMultiSelectionExample {
     console.log('@sp form', this.form);
 
     // NOW WORKING!!!!
-     this.data.patchValue(
-      ['lasagna', 'rösti']
-    );
+    this.data.patchValue(['lasagna', 'rösti']);
 
+    // als working!
     /*this.data.setValue(
       ['lasagna', 'eisbein', 'rösti']
       //[['lasagna', 'eisbein', 'rösti']]
@@ -64,6 +62,5 @@ export class SelectOptionGroupsMultiSelectionExample {
 
     console.log('@sp data', this.data.value);
     debugger;
-
   }
 }
