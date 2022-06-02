@@ -52,7 +52,7 @@ export class SelectOptionGroupsMultiSelectionExample {
 
     console.log('@sp form', this.form);
 
-    // NOT WORKING!!!!
+    // NOW WORKING!!!!
      this.data.patchValue(
       ['lasagna', 'rösti']
     );
