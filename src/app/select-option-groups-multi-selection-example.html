@@ -1,20 +1,46 @@
+<form [formGroup]="newForm">
+<sbb-form-field>
+  <sbb-label>International food</sbb-label>
+  <sbb-select formControlName="data" multiple placeholder="International food">
+    <sbb-optgroup *ngFor="let foodNation of foodFromTheWorld" [label]="foodNation.nation">
+      <sbb-option *ngFor="let food of foodNation.food" [value]="food.value"
+        >{{ food.viewValue }}</sbb-option
+      >
+    </sbb-optgroup>
+  </sbb-select>
+</sbb-form-field>
+
+<h4>Properties</h4>
+<pre>{{ newForm.get('data')?.value | json }}</pre>
+<sbb-checkbox
+  (change)="$event.checked ? newForm.get('data')?.disable() : newForm.get('data')?.enable()"
+  >Disabled
+</sbb-checkbox>
+</form>
+
+
+
+
+
+
+
+
 <form [formGroup]="form">
-<sbb-select
-  formControlName="value"
-  multiple
-  placeholder="Essen - Weiterer Placeholdertext"
->
-  <sbb-optgroup
-    *ngFor="let entriesOfGroup of entriesOfGroups"
-    [label]="entriesOfGroup.group"
-  >
-    <sbb-option
-      *ngFor="let entry of entriesOfGroup.entries"
-      [value]="entry.display"
-      sbbTooltip="{{entry.tooltip}}" selected="isPreselected(entry.display)"
-    >
-      {{ entry.display }}
-    </sbb-option>
-  </sbb-optgroup>
-</sbb-select>
+  <sbb-form-field>
+    <sbb-label>International food</sbb-label>
+    <sbb-select formControlName="value" multiple placeholder="International food">
+      <sbb-optgroup *ngFor="let foodNation of foodFromTheWorld" [label]="foodNation.nation">
+        <sbb-option *ngFor="let food of foodNation.food" [value]="food.value"
+          >{{ food.viewValue }}</sbb-option
+        >
+      </sbb-optgroup>
+    </sbb-select>
+  </sbb-form-field>
+
+  <h4>Properties</h4>
+  <pre>{{ form.get('value')?.value | json }}</pre>
+  <sbb-checkbox
+    (change)="$event.checked ? form.get('value')?.disable() : form.get('value')?.enable()"
+    >Disabled
+  </sbb-checkbox>
 </form>
