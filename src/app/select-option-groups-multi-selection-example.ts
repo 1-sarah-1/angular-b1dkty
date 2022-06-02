@@ -11,13 +11,9 @@ import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SelectOptionGroupsMultiSelectionExample {
   form: FormGroup;
-  myForm: FormGroup;
   entriesOfGroups: EntriesOfGroup[] = [];
 
   constructor(formBuilder: FormBuilder) {
-    //this.form = formBuilder.group({
-    //      value: [[]],
-    //});
 
     const group1Entry1 = {
       display: 'Tiramisu',
@@ -53,12 +49,9 @@ export class SelectOptionGroupsMultiSelectionExample {
     this.entriesOfGroups.push(entriesOfGroup2);
 
     this.form = formBuilder.group({
-      value: [['Blau']],
-    });
-
-    this.myForm = formBuilder.group({
       value: [[group2Entry1.display, group1Entry2.display]],
     });
+
   }
 }
 
