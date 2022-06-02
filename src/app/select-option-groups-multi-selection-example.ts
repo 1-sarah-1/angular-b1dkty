@@ -63,6 +63,7 @@ export class SelectOptionGroupsMultiSelectionExample {
     );*/
 
     console.log('@sp data', this.data.value);
+    debugger;
 
   }
 }
