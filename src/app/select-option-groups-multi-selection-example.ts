@@ -50,11 +50,19 @@ export class SelectOptionGroupsMultiSelectionExample {
       value: [['lasagna', 'eisbein', 'rösti']],
     });
 
-    // NOT WORKING!!!!
-    this.data.patchValue(
-      [['lasagna', 'eisbein', 'rösti']]
-    )
+    console.log('@sp form', this.form);
 
-    debugger;
+    // NOT WORKING!!!!
+     this.data.patchValue(
+      ['lasagna', 'rösti']
+    );
+
+    /*this.data.setValue(
+      ['lasagna', 'eisbein', 'rösti']
+      //[['lasagna', 'eisbein', 'rösti']]
+    );*/
+
+    console.log('@sp data', this.data.value);
+
   }
 }
